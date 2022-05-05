@@ -1,19 +1,29 @@
+const { deepStrictEqual } = require('assert');
 const assert = require('assert');
 const Paint = require('../paint.js');
 
 beforeEach(function () {
-
+    paintBucket1 = new Paint(5);
 });
 
 
 describe('Paint', function () {
-    xit('have a number of litres of paint', function() {
-
+    it('have a number of litres of paint', function() {
+        const expected = 5;
+        assert.deepStrictEqual(expected, paintBucket1.litresOfPaint);
     });
-    xit('be able to check if it is empty', function () {
-
+    it('should not start empty', function () {
+        const expected = false;
+        assert.deepStrictEqual(expected, paintBucket1.isEmpty());
     });
-    xit('be able to empty itself of paint', function () {
-
+    it('be able to check if it is empty', function () {
+        paintBucket1.empty();
+        const expected = true;
+        assert.deepStrictEqual(expected, paintBucket1.isEmpty());
+    });
+    it('be able to empty itself of paint', function () {
+        paintBucket1.empty();
+        const expected = 0;
+        assert.deepStrictEqual(expected, 0);
     });
 });
