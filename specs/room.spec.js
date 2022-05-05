@@ -3,11 +3,14 @@ const Room = require('../room.js');
 const Paint = require('../paint.js');
 const Decorator = require('../decorator.js');
 
-beforeEach(function () {
-    room1 = new Room(20);
-});
-
 describe('Room', function () {
+
+    let room1;
+
+    beforeEach(function () {
+        room1 = new Room(20);
+    });
+    
     it('have an area in square meters', function () {
         const actual = room1.areaSquareMeters;
         assert.deepStrictEqual(actual, 20);

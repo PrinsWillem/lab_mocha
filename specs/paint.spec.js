@@ -2,12 +2,14 @@ const { deepStrictEqual } = require('assert');
 const assert = require('assert');
 const Paint = require('../paint.js');
 
-beforeEach(function () {
-    paintBucket1 = new Paint(5);
-});
-
-
 describe('Paint', function () {
+
+    let paintBucket1;
+
+    beforeEach(function () {
+        paintBucket1 = new Paint(5);
+    });
+
     it('have a number of litres of paint', function() {
         const expected = 5;
         assert.deepStrictEqual(expected, paintBucket1.litresOfPaint);
